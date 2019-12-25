@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="listuser">
+
+    <tr>
+        <TD>编号</TD>
+        <TD>账号</TD>
+        <TD>密码</TD>
+        <TD>性别</TD>
+        <TD>生日</TD>
+
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.userId}">1</td>
+        <td th:text="${user.userName}">tom</td>
+        <td th:text="${user.password}">123</td>
+        <td th:text="${user.sex}==1?'男':'女'">1</td>
+        <td th:text="${#dates.format(user.birthday,'yyyy-MM-dd')}">2019-05-09</td>
+    </tr>
+</table>
+</body>
+</html>
